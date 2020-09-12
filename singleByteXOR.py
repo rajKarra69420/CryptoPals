@@ -1,6 +1,3 @@
-# This is a brute force method where we try every key in the ascii table
-# Here this code will give us the plain text but we need to filter it from the cipher text
-
 #I got the table from https://en.wikipedia.org/wiki/Letter_frequency and i just guessed space frequency till I got the
 # right output
 character_frequencies = {
