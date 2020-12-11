@@ -7,6 +7,7 @@ d = []
 for i in l:
         d.append(s.breakCipher(bytes.fromhex(i)))
 
-d = sorted(d, key = lambda x : x['score'])
-#print(d[len(d) - 1])
+if __name__ == '__main__':
+        d = sorted(d, key = lambda x : x['score'])
+        print(d[len(d) - 1])
 

@@ -35,10 +35,11 @@ def crack(distances, text):
     return(sorted(p, key=lambda x: breakSingleXor.findCharFrequencies(x[0]))[len(p) - 1])
 
 
-f = open("set1_challenge6_encrypted.txt", "r")
-c = base64.b64decode(f.read())
-assert(getHammingDistance(bytes("this is a test", 'utf-8'), bytes("wokka wokka!!!", 'utf-8')) == 37)
-m = getKeySize(c)
-text = crack(m,c)
-print(text)
+if __name__ == '__main__':
+    f = open("set1_challenge6_encrypted.txt", "r")
+    c = base64.b64decode(f.read())
+    assert(getHammingDistance(bytes("this is a test", 'utf-8'), bytes("wokka wokka!!!", 'utf-8')) == 37)
+    m = getKeySize(c)
+    text = crack(m,c)
+    print(text)
 

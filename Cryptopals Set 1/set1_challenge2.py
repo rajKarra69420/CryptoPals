@@ -6,8 +6,9 @@ def fixedXOR(text, key):
         arr.append(i ^ j)
     return arr
 
-#print("enter the input")
-#useCipher = input()
-#print("enter the key")
-#key = input()
-#print(fixedXOR(bytes.fromhex(useCipher),  bytes.fromhex(key)).hex())
+if __name__ == '__main__':
+    print("enter the input")
+    useCipher = input()
+    print("enter the key")
+    key = input()
+    print(fixedXOR(bytes.fromhex(useCipher),  bytes.fromhex(key)).hex())

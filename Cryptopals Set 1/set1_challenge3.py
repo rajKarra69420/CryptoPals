@@ -28,10 +28,10 @@ def breakCipher(ciphertext):
         result = b''
     return sorted(l, key = lambda x : x['score'])[len(l) - 1]
 
-
-#decrypt = input()
-#l = breakCipher(bytes.fromhex(decrypt))
-#print(l)
+if __name__ == '__main__':
+    decrypt = input()
+    l = breakCipher(bytes.fromhex(decrypt))
+    print(l)
 
 
 

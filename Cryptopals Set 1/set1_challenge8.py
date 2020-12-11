@@ -7,7 +7,8 @@ def find_max_repetitions(encrypted_lines):
         result.append({'ciphertext': line, 'repetitions': number_of_repetitions})
     return sorted(result, key=lambda x: x['repetitions'])[len(result) - 1]['ciphertext']
 
-f = open("set1_challenge8_strings.txt", "r")
-lines = f.read().splitlines()
-lines = [bytes.fromhex(l) for l in lines]
-print(find_max_repetitions(lines))
+if __name__ == '__main__':
+    f = open("set1_challenge8_strings.txt", "r")
+    lines = f.read().splitlines()
+    lines = [bytes.fromhex(l) for l in lines]
+    print(find_max_repetitions(lines))
