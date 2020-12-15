@@ -63,7 +63,7 @@ def byte_at_a_time(oracle):
                 input_block += last_bytes[one_byte_short]
         plaintext += plaintext_block
         input_block = plaintext_block
-    return plaintext
+    return plaintext.decode()
 
 if __name__ == '__main__':
     print(byte_at_a_time(oracle))
