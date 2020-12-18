@@ -16,7 +16,7 @@ def find_admin_role(ciphertext):
     return b';admin=true;' in CBC.decrypt_cbc_with_ecb(ciphertext, key, iv, 16)
 
 
-def cbc_bitflipping_attack(oracle):
+def get_admin(oracle):
     # we cannot get ";admin=true;" without breaking cbc
     # we do this by taking advantage of 2 occurrences when a 1 bit error happens
     # this one bit error will completely scramble the current block
@@ -57,4 +57,4 @@ def cbc_bitflipping_attack(oracle):
     return ciphertext
 
 if __name__ == '__main__':
-    print(find_admin_role(cbc_bitflipping_attack(cbc_encrypt)))
+    print(find_admin_role(get_admin(cbc_encrypt)))
