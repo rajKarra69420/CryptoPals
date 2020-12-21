@@ -31,7 +31,7 @@ def decrypt_cbc_with_ecb(ciphertext, key, iv, block_size):
 if __name__ == '__main__':
     f_decoded = base64.b64decode(open('set2_challenge10_encrypted.txt', 'r').read())
     decrypted = decrypt_cbc_with_ecb(f_decoded, b'YELLOW SUBMARINE', bytes([0] * 16), 16)
-    print(decrypted) # make sure plaintext is correct by looking at output
+    print(decrypted.decode()) # make sure plaintext is correct by looking at output
     reencrypted = encrypt_cbc_with_ecb(decrypted, b'YELLOW SUBMARINE',bytes([0] * 16) , 16)
     # if our encryption and decryption is correct then decryption(encryption(p)) == p should hold
     # where decryption and encryption are our functions above
