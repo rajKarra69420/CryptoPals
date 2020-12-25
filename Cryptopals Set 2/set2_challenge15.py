@@ -1,4 +1,4 @@
-def validatePKCS7(byte_string: bytes)->bytes:
+def validatePKCS7(byte_string: bytes):
     if len(byte_string) < byte_string[-1] :
         return ValueError("invalid padding")
     for i in range(byte_string[-1], 0, -1):
