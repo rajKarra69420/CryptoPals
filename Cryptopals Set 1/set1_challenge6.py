@@ -41,5 +41,5 @@ if __name__ == '__main__':
     assert(getHammingDistance(bytes("this is a test", 'utf-8'), bytes("wokka wokka!!!", 'utf-8')) == 37)
     m = getKeySize(c)
     text = crack(m,c)
-    print(text)
+    print(text[0].decode())
 
