@@ -3,7 +3,7 @@
 import numpy as np
 
 class MT19937:
-    def __init__(self, seed=5489):
+    def __init__(self, seed=5489, state=None):
         self.seed = seed
         self.w = 32
         self.n = 624
@@ -20,9 +20,12 @@ class MT19937:
         self.f = 1812433253
         self.upper_mask = ((1 << self.w) - 1) - ((1 << self.r) - 1)
         self.lower_mask = (1 << self.r)-1
-        self.state = [0] * self.n
         self.index = self.n
-        self.initialize_state()
+        if(state == None):
+            self.state = [0] * self.n
+            self.initialize_state()
+        else:
+            self.state = state
 
     def initialize_state(self):
         self.state[0] = self.seed
@@ -51,3 +54,4 @@ class MT19937:
                 xa = xa ^ self.a
             self.state[i] = self.state[(i + self.m) % self.n] ^ xa
             self.index = 0
+
