@@ -44,9 +44,9 @@ def generate_modified_c1(block, guess, padding_size, found_plaintext):
     return new_c1
 
 
-def get_last_bytes(block, padding_len, found_plaintext, oracle, curr):
+def get_last_bytes(block, padding_size, found_plaintext, oracle, curr):
     last_bytes = []
-    guess_blocks = [(generate_modified_c1(block, i, padding_len, found_plaintext), i) for i in range(256)]
+    guess_blocks = [(generate_modified_c1(block, i, padding_size, found_plaintext), i) for i in range(256)]
     for block in guess_blocks:
         if(not oracle(curr, block[0])):
             continue
