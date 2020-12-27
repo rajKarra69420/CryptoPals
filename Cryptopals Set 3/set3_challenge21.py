@@ -3,7 +3,7 @@
 import numpy as np
 
 class MT19937:
-    def __init__(self, seed=5486):
+    def __init__(self, seed=5489):
         self.seed = seed
         self.w = 32
         self.n = 624
