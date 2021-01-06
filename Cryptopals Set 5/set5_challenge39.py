@@ -28,7 +28,7 @@ def get_keys(keysize, e=3):
         phi = lcm(p - 1, q - 1)
         n = p * q
     # this method of getting the multiplicative inverse only works with python 3.9
-    return {'d': pow(e, -1, phi), 'n': n}
+    return {'d': pow(e, -1, phi), 'e': e, 'n': n}
 
 
 if __name__ == '__main__':
